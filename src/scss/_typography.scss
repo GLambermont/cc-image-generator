@@ -1,0 +1,95 @@
+body {
+  color: $c-copy-light;
+  font-family: $font-stack-copy;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $c-heading-light;
+}
+
+h1, .h1 {
+  font-size: $font-size-h1;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+  font-weight:  300;
+  line-height: 1.35;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+  font-weight: 400;
+  line-height: 1.5;
+}
+h6, .h6 {
+  font-size: $font-size-h6;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: $font-size-caption;
+}
+
+.overline {
+  font-size: $font-size-overline;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+pre,
+code, .code {
+  font-family: $font-stack-system-mono;
+}
+
+.text-dark {
+  color: $c-copy-dark;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $c-heading-dark;
+  }
+}
+
+.text-light {
+  color: $c-copy-light;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $c-heading-light;
+  }
+}
+
+.title-group {
+  margin: 40px 0 24px 0;
+
+  h1, .h1 { margin: 0.1em 0; }
+  h2, .h2 { margin: 0.1em 0; }
+  h3, .h3 { margin: 0.15em 0; }
+  h4, .h4 { margin: 0.2em 0; }
+  h5, .h5 { margin: 0.25em 0; }
+  h6, .h6 { margin: 0.3em 0; }
+
+  &.bottom-spacing {
+    margin-bottom: 56px;
+  }
+}

@@ -1,0 +1,55 @@
+// Colors
+$c-black: #000000;
+$c-white: #FFFFFF;
+$c-error-red: #F23535;
+$c-success-green: #0BB35C;
+$c-warning-yellow: #E1A20E;
+
+$c-heading-dark: #000;
+$c-copy-dark: rgba(#000, 0.8);
+
+$c-heading-light: #FFF;
+$c-copy-light: #fff;
+
+$c-blue: #0061ff;
+$c-grey-light: #efefef;
+// Typography
+$font-stack-system: system_ui, _apple_system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans_serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-stack-system-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+$font-stack-heading: $font-stack-system;
+$font-stack-copy: $font-stack-system;
+
+$font-size-h1: 58px;
+$font-size-h2: 48px;
+$font-size-h3: 36px;
+$font-size-h4: 28px;
+$font-size-h5: 25px;
+$font-size-h6: 20px;
+$font-size-copy: 16px;
+$font-size-caption: 13px;
+$font-size-overline: 12px;
+
+// Metrics
+$content-width-s: 640px;
+$content-width-m: 800px;
+$content-width-l: 1200px;
+
+$content-padding-s: 16px;
+$content-padding-m: 24px;
+$content-padding-l: 40px;
+
+// Shadows
+$shadow-1: 0 0 4px rgba(#000, 0.08), 0 4px 8px rgba(#000, 0.1);
+$shadow-2: 0 0 8px rgba(#000, 0.08), 0 10px 18px rgba(#000, 0.1);
+$shadow-3: 0 0 12px rgba(#000, 0.08), 0 16px 24px rgba(#000, 0.1);
+
+// Breakpoints using Include Media
+// Docs: https://include_media.com/documentation/
+$breakpoints: (
+  mobile_s: 320px,
+  mobile_m: 375px,
+  mobile_l: 425px,
+  tablet: 768px,
+  laptop: 1024px,
+  laptop_l: 1440px
+);

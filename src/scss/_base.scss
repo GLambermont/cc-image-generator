@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.content-width-s,
+.content-width-m,
+.content-width-l {
+  margin: 0 auto;
+}
+
+.content-width-s {
+  max-width: $content-width-s;
+  padding: 0 $content-padding-s;
+}
+
+.content-width-m {
+  max-width: $content-width-m;
+  padding: 0 $content-padding-m;
+}
+
+.content-width-l {
+  max-width: $content-width-l;
+  padding: 0 $content-padding-l;
+}
