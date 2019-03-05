@@ -21,19 +21,23 @@
     </div>
 
     <div class="sidebar-section export">
-      <button @click="generateCCImages">Generate correction images</button>
+      <button @click="handleExport">Generate correction images</button>
     </div>
   </aside>
 </template>
 
 <script>
+import getAverageColor from 'get-average-color'
+import * as chroma from 'chroma-js';
+import { generateCheckerImage } from '../js/helpers';
+
 export default {
   name: 'Sidebar',
   data() {
     return {
       newCCItemName: '',
       newCCItemColor: '#000000',
-      newCCItemImage: null
+      newCCItemImage: null,
     }
   },
   methods: {
@@ -46,14 +50,38 @@ export default {
         this.newCCItemImage.src = e.target.result;
       };
     },
-    addCCItem() {
+    async addCCItem() {
       if (this.newCCItemName && this.newCCItemColor && this.newCCItemImage) {
+        // Get the average color of the uploaded image and correct it's lightness based on the reference image
+        const correctionColorRGB = await getAverageColor(this.newCCItemImage.src);
+        const referenceColorLAB = chroma(this.newCCItemColor).lab();
+        const correctionColorLAB = chroma(correctionColorRGB).lab();
+        const correctionColorCorrectedLAB = [referenceColorLAB[0], correctionColorLAB[1], correctionColorLAB[2]];
+        const correctionColorCorrectedHex = chroma.lab(correctionColorCorrectedLAB).hex();
+
+        // Add the new item to the store
         this.$store.commit('addCCItem', {
           name: this.newCCItemName,
-          color: this.newCCItemColor,
-          image: this.newCCItemImage,
-        });
+          referenceColor: this.newCCItemColor,
+          correctionColor: correctionColorCorrectedHex,
+          image: this.newCCItemImage
+        });               
       }
+    },
+    async handleExport() {
+      const CCItems = this.$store.state.CCItems;
+
+      // Generate checker image for reference colors
+      generateCheckerImage({
+        colors: CCItems.map(item => item.referenceColor),
+        fileName: 'referenceColors'
+      });
+
+      // Generate checker image for correction images
+      generateCheckerImage({
+        colors: CCItems.map(item => item.correctionColor),
+        fileName: 'correctionColors'
+      });
     }
   }
 };

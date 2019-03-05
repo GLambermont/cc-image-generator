@@ -4,7 +4,8 @@
       v-for="(item, index) in $store.state.CCItems"
       :key="index"
       :name="item.name"
-      :color="item.color"
+      :referenceColor="item.referenceColor"
+      :correctionColor="item.correctionColor"
       :image="item.image"
     />
   </ul>

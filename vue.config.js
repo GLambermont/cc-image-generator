@@ -1,4 +1,11 @@
 module.exports = {
+  pages: {
+    app: {
+      entry: 'src/js/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+    }
+  },
   css: {
     sourceMap: true,
     loaderOptions: {

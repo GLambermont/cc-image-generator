@@ -1,8 +1,9 @@
 <template>
   <li class="cc-item">
     <div class="thumb">
-      <div class="thumb-color" :style="{ backgroundColor: color }"></div>
+      <div class="thumb-reference-color" :style="{ backgroundColor: referenceColor }"></div>
       <img class="thumb-image" :src="image.src" alt="correction image">
+      <div class="thumb-correction-color" :style="{ backgroundColor: correctionColor }"></div>
     </div>
     <p class="item-name">{{ name }}</p>
   </li>
@@ -13,8 +14,9 @@ export default {
   name: 'ConversionItem',
   props: {
     name: { type: String },
-    color: { type: String },
-    image: { type: Image },
+    referenceColor: { type: String },
+    correctionColor: { type: String },
+    image: { type: Image }
   }
 };
 </script>
@@ -35,14 +37,23 @@ export default {
   border-radius: 8px;
 }
 
-.thumb-color {
-  height: 50%;
+.thumb-reference-color, 
+.thumb-correction-color, 
+.thumb-image {
+  height: 50%
+}
+
+.thumb-correction-color,
+.thumb-image {
+  display: inline-block;
+  width: 50%;
+}
+
+.thumb-reference-color {
   border-radius: 4px 4px 0 0;
 }
 
 .thumb-image {
-  height: 50%;
-  width: 100%;
   object-fit: cover;
   border-radius: 0 0 4px 4px;
 }
