@@ -3,8 +3,8 @@
     <Sidebar></Sidebar>
 
     <main>
-      <div class="content-width-l">
-        <h1>Correction items</h1>
+      <div class="content-width-m">
+        <h2>Correction items</h2>
         <CCItemGrid />
       </div>
     </main>
@@ -36,10 +36,11 @@ export default {
 
 main {
   width: 100%;
+  overflow: auto;
+  padding-bottom: 80px;
 }
 
-button,
-.button {
+button, .button {
   background: $oc-indigo-6;
   color: $c-white;
   border: none;

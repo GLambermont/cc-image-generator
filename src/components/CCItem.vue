@@ -37,10 +37,10 @@ export default {
   border-radius: 8px;
 }
 
-.thumb-reference-color, 
-.thumb-correction-color, 
+.thumb-reference-color,
+.thumb-correction-color,
 .thumb-image {
-  height: 50%
+  height: 50%;
 }
 
 .thumb-correction-color,
@@ -53,14 +53,18 @@ export default {
   border-radius: 4px 4px 0 0;
 }
 
+.thumb-correction-color {
+  border-bottom-right-radius: 4px;
+}
+
 .thumb-image {
   object-fit: cover;
-  border-radius: 0 0 4px 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .item-name {
   margin: 0;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 </style>
 

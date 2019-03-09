@@ -7,6 +7,10 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/GLambermont/cc-image-generator"
+  },
   "dependencies": {
     "chroma-js": "^2.0.3",
     "get-average-color": "0.0.6",
